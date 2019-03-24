@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dizzy-3D-Pig</title>
+
+    <link rel="stylesheet" href="css/dizzy.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<svg>
+    <symbol id="s-hexagon">
+        <path d="M45,0 L90,30 90,80 45,110 0,80 0,30 z">
+        </path>
+    </symbol>
+
+    <mask id="mask">
+        <use xlink:href="#s-hexagon"
+                class="shape--mask"></use>
+    </mask>
+
+    <filter id="drop-shadow">
+        <feGaussianBlur stdDeviation="2.7" in="SourceAlpha"/>
+        <feOffset dx="0" dy="0" result="offsetblur"/>
+        <feFlood flood-color="rgba(0,0,0,.7)"/>
+        <feComposite operator="in" in2="offsetblur"/>
+        <feMerge>
+            <feMergeNode/>
+            <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+    </filter>
+
+    <pattern id="patt" class="pattern"
+            width="90" height="156"
+            patternUnits="userSpaceOnUse"
+            viewBox="0 0 90 156">
+
+        <g mask="url(#mask)">
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--1"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--2"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--3"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--4"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--5"
+            "></use>
+        </g>
+
+        <g mask="url(#mask)"
+                transform="translate(45,-78)">
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--1"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--2"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--3"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--4"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--5"></use>
+        </g>
+
+        <g mask="url(#mask)"
+                transform="translate(-45,-78)">
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--1"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--2"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--3"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--4"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--5"></use>
+        </g>
+
+
+        <g mask="url(#mask)"
+                transform="translate(45,78)">
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--1"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--2"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--3"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--4"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--5"></use>
+        </g>
+
+        <g mask="url(#mask)"
+                transform="translate(-45,78)">
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--1"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--2"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--3"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--4"></use>
+            <use xlink:href="#s-hexagon"
+                    class="shape shape--5"></use>
+        </g>
+
+    </pattern>
+
+    <rect width="100%" height="100%"
+            fill="url(#patt)"></rect>
+</svg>
+
+<div class="pig">
+    <div class="body">
+        <div class="front"></div>
+        <div class="right">As lovely as you.</div>
+        <div class="back"></div>
+        <div class="left">I thought I was Pikachu.</div>
+        <div class="top"></div>
+        <div class="bottom">変態。</div>
+    </div>
+    <div class="head">
+        <div class="front"></div>
+        <div class="right"></div>
+        <div class="back"></div>
+        <div class="left"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+    <div class="nose">
+        <div class="front"></div>
+        <div class="right"></div>
+        <div class="back"></div>
+        <div class="left"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+    <div class="ear ear-left">
+        <div class="front"></div>
+        <div class="right"></div>
+        <div class="back"></div>
+        <div class="left"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+    <div class="ear ear-right">
+        <div class="front"></div>
+        <div class="right"></div>
+        <div class="back"></div>
+        <div class="left"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+    <div class="foot bl">
+        <div class="front"></div>
+        <div class="right"></div>
+        <div class="back"></div>
+        <div class="left"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+    <div class="foot br">
+        <div class="front"></div>
+        <div class="right"></div>
+        <div class="back"></div>
+        <div class="left"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+    <div class="foot fl">
+        <div class="front"></div>
+        <div class="right"></div>
+        <div class="back"></div>
+        <div class="left"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+    <div class="foot fr">
+        <div class="front"></div>
+        <div class="right"></div>
+        <div class="back"></div>
+        <div class="left"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"> </script>
+<script src="main.js"></script>
+
+</body>
+</html>

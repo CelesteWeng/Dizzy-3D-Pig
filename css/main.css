@@ -1,0 +1,445 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    color: green;
+    font-size: 12px;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.pig {
+    position: relative;
+    width: 120px;
+    height: 100px;
+    /* 指定子元素定位在三维空间内 */
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: bottom left;
+    transform-origin: bottom left;
+    /* animation-direction: alternate; 动画交替反向运行 */
+    -webkit-animation: rotating 10s infinite alternate;
+    animation: rotating 10s infinite alternate;
+}
+
+.pig > div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+.pig > div > div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+}
+
+/*- 设置各部位每面的宽高、纯色背景*/
+/*1. body */
+
+.pig > .body {
+    width: 120px;
+    height: 100px;
+    transform: translateY(-80px);
+}
+
+.pig > .body .front,
+.pig > .body .back {
+    width: 120px;
+    height: 100px;
+    background-color: #ffa7b6;
+}
+
+.pig > .body .left,
+.pig > .body .right {
+    width: 150px;
+    height: 100px;
+    background-color: #ffb6c3;
+}
+
+.pig > .body .top,
+.pig > .body .bottom {
+    width: 120px;
+    height: 150px;
+    background-color: #ffa7b6;
+}
+
+/*2. head */
+
+.pig > .head {
+    width: 100px;
+    height: 70px;
+    top: 10px;
+    left: 50%;
+
+    /* 猪身长 150px */
+    transform: translate3d(-50%, 0, 150px);
+}
+
+.pig > .head .front,
+.pig > .head .back {
+    width: 100px;
+    height: 70px;
+    background-color: #ffa7b6;
+}
+
+.pig > .head .left,
+.pig > .head .right {
+    width: 40px;
+    height: 70px;
+    background-color: #ffb6c3;
+}
+
+.pig > .head .top,
+.pig > .head .bottom {
+    width: 100px;
+    height: 40px;
+    background-color: #ffa7b6;
+}
+
+/* 3. nose */
+
+.pig > .nose {
+    width: 70px;
+    height: 36px;
+    top: 20px;
+    left: 50%;
+    transform: translate3d(-50%, 0, 190px);
+}
+
+.pig > .nose .front,
+.pig > .nose .back {
+    width: 70px;
+    height: 36px;
+    background-color: #ffa7b6;
+}
+
+.pig > .nose .left,
+.pig > .nose .right {
+    width: 30px;
+    height: 36px;
+    background-color: #ffb6c3;
+}
+
+.pig > .nose .top,
+.pig > .nose .bottom {
+    width: 70px;
+    height: 30px;
+    background-color: #ffa7b6;
+}
+
+/*4. ear */
+.pig > .ear {
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    left: 50%;
+}
+
+.pig > .ear .front,
+.pig > .ear .back {
+    width: 20px;
+    height: 20px;
+    background-color: #ffa7b6;
+}
+
+.pig > .ear .left,
+.pig > .ear .right {
+    width: 20px;
+    height: 20px;
+    background-color: #ffb6c3;
+}
+
+.pig > .ear .top,
+.pig > .ear .bottom {
+    width: 20px;
+    height: 20px;
+    background-color: #ffa7b6;
+}
+
+/* 5. foot */
+.pig > .foot {
+    width: 20px;
+    height: 25px;
+    bottom: -25px;
+}
+
+.pig > .foot .front {
+    width: 20px;
+    height: 25px;
+    background-color: #ffa7b6;
+    transform: translateZ(20px);
+}
+
+.pig > .foot .back {
+    width: 20px;
+    height: 25px;
+    background-color: #ffa7b6;
+}
+
+.pig > .foot .left {
+    width: 20px;
+    height: 25px;
+    background-color: #ffb6c3;
+    transform: rotateY(-90deg);
+}
+
+.pig > .foot .right {
+    width: 20px;
+    height: 25px;
+    transform: rotateY(-90deg) translateZ(-20px);
+    background-color: #ff97a9;
+}
+
+.pig > .foot .top {
+    width: 20px;
+    height: 20px;
+    transform: rotateX(-90deg) translateZ(-25px);
+    background-color: #ffb6c3;
+}
+
+.pig > .foot .bottom {
+    width: 20px;
+    height: 20px;
+    transform: rotateX(-90deg);
+    background-color: #ffa7b6;
+}
+
+.pig .foot > div {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 33%, rgba(226, 110, 154, 1) 33%, rgba(226, 110, 154, 1) 68%, rgba(255, 167, 182, 1) 68%, rgba(255, 167, 182, 1) 100%);
+}
+
+.pig > .foot.fl {
+    transform: translate3d(90px, -80px, 120px);
+}
+
+.pig > .foot.fr {
+    transform: translate3d(10px, -80px, 120px);
+}
+
+.pig > .foot.bl {
+    transform: translate3d(90px, -80px, 10px);
+}
+
+.pig > .foot.br {
+    transform: translate3d(10px, -80px, 10px);
+}
+
+/*- 设置各部位每面的变换*/
+/*1. body*/
+
+.pig > .body .front {
+    transform: translateZ(150px);
+}
+
+.pig > .body .left {
+    transform: rotateY(-90deg);
+}
+
+.pig > .body .right {
+    transform: rotateY(-90deg) translateZ(-120px);
+}
+
+.pig > .body .top {
+    transform: rotateX(-90deg) translateZ(-100px);
+}
+
+.pig > .body .bottom {
+    transform: rotateX(-90deg);
+}
+
+/*2. head*/
+
+.pig > .head .front {
+    transform: translate3d(0, -80px, 40px);
+}
+
+.pig > .head .back {
+    transform: translateY(-80px);
+}
+
+.pig > .head .left {
+    transform: rotateY(-90deg) translateY(-80px);
+}
+
+.pig > .head .right {
+    transform: rotateY(-90deg) translateY(-80px) translateZ(-100px);
+}
+
+.pig > .head .top {
+    transform: rotateX(-90deg) translateZ(-150px);
+}
+
+.pig > .head .bottom {
+    transform: rotateX(-90deg) translateZ(-80px);
+}
+
+/* eye */
+
+.pig > .head .front::after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 15px;
+    top: 0;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    /* background: red; */
+    box-shadow: 15px 0 0 #000, -15px 0 0 #000;
+    animation: blink 4s infinite ease-in-out;
+}
+
+/* 3. nose */
+
+.pig > .nose .front {
+    transform: translate3d(0, -80px, 30px);
+}
+
+.pig > .nose .back {
+    transform: translate3d(0, -80px, 0);
+}
+
+.pig > .nose .left {
+    transform: rotateY(-90deg) translateY(-80px);
+}
+
+.pig > .nose .right {
+    transform: rotateY(-90deg) translateY(-80px) translateZ(-70px);
+}
+
+.pig > .nose .top {
+    transform: rotateX(-90deg) translateZ(-116px);
+}
+
+.pig > .nose .bottom {
+    transform: rotateX(-90deg) translate3d(0, 0, -80px);
+}
+
+/* nostrils 鼻孔 */
+.pig > .nose .front::after {
+    position: absolute;
+    content: '';
+    width: 10px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    /* 加上背景色就可理解 box-shadow */
+    /* background: green; */
+    transform: translate3d(-50%, -50%, 0);
+    box-shadow: 10px 0 0 #872c39, -10px 0 0 #872c39;
+}
+
+/* 4. ear */
+
+.pig > .ear .front {
+    transform: translate3d(0, -100px, 170px);
+}
+
+.pig > .ear .front::after {
+    position: absolute;
+    content: '';
+    width: 8px;
+    height: 10px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #872c39;
+}
+
+.pig > .ear .back {
+    transform: translate3d(0, -100px, 150px);
+}
+
+.pig > .ear .left {
+    transform: rotateY(-90deg) translate3d(150px, -100px, 0);
+}
+
+.pig > .ear .right {
+    transform: rotateY(-90deg) translate3d(150px, -100px, -20px);
+}
+
+.pig > .ear .top {
+    transform: rotateX(-90deg) translate3d(0px, -150px, -120px);
+}
+
+.pig > .ear .bottom {
+    transform: rotateX(-90deg) translate3d(0px, -150px, -100px);
+    border: 2px solid blue;
+    z-index: 999;
+}
+
+.pig > .ear.ear-left {
+    transform: translate3d(75%, 0, 0)
+}
+
+.pig > .ear.ear-right {
+    transform: translate3d(-175%, 0, 0)
+}
+
+/*- 设置每面 background*/
+
+.left,
+.right {
+    background-image: linear-gradient(to bottom, #f9e4e6, #feb8d1);
+}
+
+.pig .front {
+    background-image: linear-gradient(to bottom, #b65d5b, #feb8d1);
+}
+
+.pig > .head .front {
+    background-image: linear-gradient(to bottom, #d06d67, #e79dae);
+}
+
+.pig > .nose .front {
+    background: #cb6067;
+}
+
+.pig > .ear .front {
+    background: #c35c65;
+}
+
+/*- 动画*/
+
+@keyframes rotating {
+    from{
+        transform:rotateX(-20deg) rotateY(45deg);
+    }
+    to{
+        transform:rotateX(-10deg) rotateY(-45deg);
+    }
+}
+
+@keyframes blink {
+    to {
+        height: 5px;
+    }
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    background-color: #000;
+    overflow: hidden;
+}
+
+canvas {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
